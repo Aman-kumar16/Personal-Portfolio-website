@@ -1,79 +1,138 @@
+@import '../../../variables';
+
 .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+  background-color: #000000 !important;
+  color: $text-color-primary;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1400px; 
+    padding: 0 30px; 
+  }
+
+  .navbar-links {
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 2vw; 
+    }
+
+    li a {
+        color: $text-color-primary;
+        text-decoration: none;
+        font-size: 1.1rem;
+        display: inline-block;
+        padding: 0.5em 0;
+        transition: color 0.3s ease, transform 0.3s ease-in-out; /* Increased duration for transform */
+    
+        &:hover {
+          color: $link-hover-color;
+          text-decoration: none;
+          transform: scale(1.08);
+        }
+    }
+  }
+
+  .navbar-toggler {
+    background: none;
+    border: none;
+    color: $text-color-primary;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+  }
+
+  // Media query for larger screens
+  @media (min-width: $breakpoint-large) { // Using a larger breakpoint
+    .navbar-links {
+      ul {
+        gap: 1.5vw; // Slightly reduced gap on very large screens
+      }
+
+      li a {
+        font-size: 1.2rem; // Larger font size on big screens
+      }
+    }
 
     .navbar-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
+      justify-content: center;
     }
+  }
 
-    .navbar-brand {
-        color: white;
-        font-size: 24px;
-        text-decoration: none;
-    }
-
-    .navbar-toggler {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 30px;
-        display: none;
-        cursor: pointer;
-    }
-
+  // Media query for medium screens
+  @media (max-width: $breakpoint-large) and (min-width: $breakpoint-medium) {
     .navbar-links {
+      ul {
+        gap: 2.5vw; // Adjust gap for medium screens
+      }
+
+      li a {
+        font-size: 1.1rem; // Maintain slightly larger size
+      }
+    }
+
+    .navbar-container {
+      justify-content: center;
+    }
+  }
+
+  // Media query for mobile view
+  @media (max-width: $breakpoint-medium) {
+    justify-content: space-between;
+
+    .navbar-container {
+      justify-content: space-between;
+
+      .navbar-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #000000 !important;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 10;
+
+        &.collapsed {
+          transform: translateY(0);
+        }
+
         ul {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-            padding: 0;
+          display: block;
+          padding: 0.8em 1em;
+          text-align: center;
+          margin: 0;
         }
 
-        li {
-            a {
-                color: white;
-                text-decoration: none;
-                font-size: 18px;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
+        li a {
+          display: block;
+          padding: 10px 0; // Increased padding for mobile links
+          font-size: 1.1rem; // Maintain slightly larger size on mobile
+          border-bottom: 1px solid $secondary-dark;
         }
+
+        li:last-child a {
+          border-bottom: none;
+        }
+      }
+
+      .navbar-toggler {
+        display: block;
+        font-size: 36px;
+      }
     }
-
-    @media (max-width: 768px) {
-        .navbar-toggler {
-            display: block;
-        }
-
-        .navbar-links {
-            position: absolute;
-            top: 60px;
-            left: 0;
-            right: 0;
-            background-color: #333;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            padding: 10px 0;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-
-            &.collapsed {
-                transform: translateY(0);
-            }
-
-            ul {
-                display: block;
-            }
-        }
-    }
+  }
 }

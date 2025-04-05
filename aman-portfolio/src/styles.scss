@@ -1,2 +1,19 @@
 /* We can add global styles to this file, and also import other style files */
 @import 'variables';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height */
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.router-outlet {
+  flex: 1; /* Allow router outlet to take up remaining space */
+}

@@ -41,11 +41,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     if (this.canvas?.nativeElement) {
       this.canvas.nativeElement.width = window.innerWidth;
       this.canvas.nativeElement.height = window.innerHeight;
-      // Make sure the canvas is positioned absolutely behind other elements
       this.canvas.nativeElement.style.position = 'fixed';
       this.canvas.nativeElement.style.top = '0';
       this.canvas.nativeElement.style.left = '0';
-      this.canvas.nativeElement.style.zIndex = '-1000'; // Ensure it's behind everything
+      this.canvas.nativeElement.style.zIndex = '-1000';
     }
   }
 
@@ -119,8 +118,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event): void {
-    this.initCanvas(); // Re-initialize canvas on resize to adjust dimensions
-    this.columns = Math.floor(window.innerWidth / this.fontSize); //Recalculate
+    this.initCanvas();
+    this.columns = Math.floor(window.innerWidth / this.fontSize);
   }
 }
-
