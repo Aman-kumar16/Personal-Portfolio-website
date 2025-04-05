@@ -2,12 +2,12 @@
     <div class="navbar-container">
       <div class="navbar-links" [class.collapsed]="isNavbarCollapsed">
         <ul>
-          <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/about">About</a></li>
-          <li><a routerLink="/skills">Skills</a></li>
-          <li><a routerLink="/projects">Projects</a></li>
-          <li><a routerLink="/resume">Resume</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+          <li><a routerLink="/about" routerLinkActive="active-link">About</a></li>
+          <li><a routerLink="/skills" routerLinkActive="active-link">Skills</a></li>
+          <li><a routerLink="/projects" routerLinkActive="active-link">Projects</a></li>
+          <li><a routerLink="/resume" routerLinkActive="active-link">Resume</a></li>
+          <li><a routerLink="/contact" routerLinkActive="active-link">Contact</a></li>
         </ul>
       </div>
       <button class="navbar-toggler" (click)="toggleNavbar()">
