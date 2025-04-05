@@ -1,0 +1,16 @@
+$primary-dark: #1a1a1a;
+$secondary-dark: #2c2c2c;
+$accent-color: #00ff99; // A vibrant green, common in terminal aesthetics
+$text-color-primary: #f0f0f0;
+$text-color-secondary: #b3b3b3;
+$link-color: $accent-color;
+$link-hover-color: lighten($accent-color, 10%);
+
+// Example for fonts
+$primary-font: 'Your Primary Font', sans-serif;
+$secondary-font: 'Your Secondary Font', serif;
+
+// Example for breakpoints
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
