@@ -13,8 +13,8 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1400px; 
-    padding: 0 30px; 
+    max-width: 1400px;
+    padding: 0 30px;
   }
 
   .navbar-links {
@@ -23,22 +23,28 @@
       list-style: none;
       padding: 0;
       margin: 0;
-      gap: 2vw; 
+      gap: 2vw;
     }
 
     li a {
-        color: $text-color-primary;
+      color: $text-color-primary;
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: inline-block;
+      padding: 0.5em 0;
+      transition: color 0.3s ease, transform 0.3s ease-in-out; /* Increased duration for transform */
+
+      &:hover {
+        color: $link-hover-color;
         text-decoration: none;
-        font-size: 1.1rem;
-        display: inline-block;
-        padding: 0.5em 0;
-        transition: color 0.3s ease, transform 0.3s ease-in-out; /* Increased duration for transform */
-    
-        &:hover {
-          color: $link-hover-color;
-          text-decoration: none;
-          transform: scale(1.08);
-        }
+        transform: scale(1.08);
+      }
+
+      &.active-link { /* Added style for the active link */
+        font-weight: bold;
+        color: $accent-color; /* Make sure $accent-color is defined in your variables */
+        /* You can add other styles like text-decoration: underline; */
+      }
     }
   }
 
