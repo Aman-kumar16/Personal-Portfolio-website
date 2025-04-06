@@ -1,0 +1,80 @@
+.skills {
+    padding: 4rem 0;
+    font-family: sans-serif;
+    /* Background with subtle gradient */
+    background: linear-gradient(to bottom, #121212, #1b1d1c); 
+    color: #f0f0f0;
+    min-height: 100vh;
+  }
+  
+  .skills-container {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .skills-intro {
+    font-size: 1.1rem;
+    color: #ddd;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .skills-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15em, 1fr)); /* Responsive grid */
+    gap: 2rem;
+  }
+  
+  .skills-category {
+    padding: 1.5rem;
+    border: 1px solid #333;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and slight lift */
+  }
+
+  .skills-category:hover {
+    border-color: #00FF00; /* That classic Matrix green */
+    border-width: 0.1em;
+    transform: translateY(-6px); /* Optional: slight lift on hover */
+  }
+  
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #ccc;
+  }
+  
+  .skills-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .skills-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #222;
+  }
+  
+  .skills-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .skill-name {
+    font-weight: bold;
+  }
+  
+  .skill-details {
+    margin-left: 0.7rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
