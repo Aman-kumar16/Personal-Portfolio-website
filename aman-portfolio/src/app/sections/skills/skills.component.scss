@@ -34,8 +34,15 @@
   
   .skills-category {
     padding: 1.5rem;
-    border: 1px solid #222;
+    border: 1px solid #333;
     border-radius: 8px;
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and slight lift */
+  }
+
+  .skills-category:hover {
+    border-color: #00FF00; /* That classic Matrix green */
+    border-width: 0.1em;
+    transform: translateY(-6px); /* Optional: slight lift on hover */
   }
   
   h3 {
