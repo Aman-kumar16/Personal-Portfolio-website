@@ -1,0 +1,74 @@
+.about-me {
+    padding: 4rem 0;
+    font-family: sans-serif; 
+    background-color: #121212; 
+    color: #f0f0f0; 
+  }
+  
+  .about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  
+  .about-image {
+    img {
+      width: 100%;
+      border-radius: 5%;
+      margin-top: 1em;
+    }
+  }
+  
+  .about-content {
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #fff; 
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+      color: #ccc; 
+    }
+  
+    p {
+      line-height: 1.6;
+      color: #ddd;
+    }
+  
+    .about-intro {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+  
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+  
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+  
+    a {
+      color: #007bff; 
+      text-decoration: none;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
