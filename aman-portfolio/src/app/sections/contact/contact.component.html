@@ -1,1 +1,32 @@
-<p>contact works!</p>
+<div class="contact-page">
+    <canvas #contactCanvas id="contactCanvas"></canvas>
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p class="intro">I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+  
+      <div class="contact-details">
+        <div class="detail-item">
+          <fa-icon [icon]="emailIcon"></fa-icon>
+          <p><a [href]="'mailto:' + email">{{ email }}</a></p>
+        </div>
+        <div class="detail-item">
+          <fa-icon [icon]="linkedinIcon"></fa-icon>
+          <p><a [href]="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+        </div>
+        <div class="detail-item">
+          <fa-icon [icon]="githubIcon"></fa-icon>
+          <p><a [href]="github" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
+        </div>
+        <div class="detail-item">
+          <fa-icon [icon]="phoneIcon"></fa-icon>
+          <p>German : {{ phoneGerman }}</p>
+        </div>
+        <div class="detail-item">
+          <fa-icon [icon]="phoneIcon"></fa-icon>
+          <p>Indian : {{ phoneIndian }}</p>
+        </div>
+      </div>
+  
+      <p class="closing">Looking forward to connecting!</p>
+    </div>
+  </div>
