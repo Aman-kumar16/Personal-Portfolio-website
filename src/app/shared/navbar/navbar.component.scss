@@ -1,5 +1,4 @@
 @import '../../../variables';
-
 .navbar {
   background-color: #000000 !important;
   color: $text-color-primary;
@@ -7,10 +6,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   .navbar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 1400px;
@@ -32,7 +32,8 @@
       font-size: 1.1rem;
       display: inline-block;
       padding: 0.5em 0;
-      transition: color 0.3s ease, transform 0.3s ease-in-out; /* Increased duration for transform */
+      transition: color 0.3s ease,
+        transform 0.3s ease-in-out;
 
       &:hover {
         color: $link-hover-color;
@@ -40,10 +41,9 @@
         transform: scale(1.08);
       }
 
-      &.active-link { /* Added style for the active link */
+      &.active-link {
         font-weight: bold;
-        color: $accent-color; /* Make sure $accent-color is defined in your variables */
-        /* You can add other styles like text-decoration: underline; */
+        color: $accent-color;
       }
     }
   }
@@ -55,17 +55,18 @@
     font-size: 30px;
     cursor: pointer;
     display: none;
+    z-index: 11;
   }
 
   // Media query for larger screens
-  @media (min-width: $breakpoint-large) { // Using a larger breakpoint
+  @media (min-width: $breakpoint-large) {
     .navbar-links {
       ul {
-        gap: 1.5vw; // Slightly reduced gap on very large screens
+        gap: 1.5vw;
       }
 
       li a {
-        font-size: 1.2rem; // Larger font size on big screens
+        font-size: 1.2rem;
       }
     }
 
@@ -78,11 +79,11 @@
   @media (max-width: $breakpoint-large) and (min-width: $breakpoint-medium) {
     .navbar-links {
       ul {
-        gap: 2.5vw; // Adjust gap for medium screens
+        gap: 2.5vw;
       }
 
       li a {
-        font-size: 1.1rem; // Maintain slightly larger size
+        font-size: 1.1rem;
       }
     }
 
@@ -97,48 +98,53 @@
 
     .navbar-container {
       justify-content: space-between;
+      position: relative;
+    }
 
-      .navbar-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: #000000 !important;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 0;
-        transform: translateY(-100%);
-        transition: transform 0.3s ease-in-out;
-        z-index: 10;
+    .navbar-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #000000 !important;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 10;
+      opacity: 0;          /* Hide the links by default */
+      visibility: hidden; /* and remove them from the flow */
 
-        &.collapsed {
-          transform: translateY(0);
-        }
-
-        ul {
-          display: block;
-          padding: 0.8em 1em;
-          text-align: center;
-          margin: 0;
-        }
-
-        li a {
-          display: block;
-          padding: 10px 0; // Increased padding for mobile links
-          font-size: 1.1rem; // Maintain slightly larger size on mobile
-          border-bottom: 1px solid $secondary-dark;
-        }
-
-        li:last-child a {
-          border-bottom: none;
-        }
+      &.collapsed {
+        transform: translateY(0);
+        opacity: 1;          /* Show the links when not collapsed */
+        visibility: visible;
       }
 
-      .navbar-toggler {
+      ul {
         display: block;
-        font-size: 36px;
+        padding: 0.8em 1em;
+        text-align: center;
+        margin: 0;
       }
+
+      li a {
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1rem;
+        border-bottom: 1px solid $secondary-dark;
+      }
+
+      li:last-child a {
+        border-bottom: none;
+      }
+    }
+
+    .navbar-toggler {
+      display: block;
+      font-size: 36px;
     }
   }
 }
